@@ -1,0 +1,49 @@
+.header{
+    background-image: url('../../assets/home/background-home-desktop.jpg');
+    background-size: cover;
+    background-position: bottom;
+
+    height: 100vh;
+
+    display: grid;
+    grid-template-rows: min-content 1fr min-content .7fr;
+    grid-template-columns: repeat(7, [col-start] 1fr [col-end]) .2fr;
+
+    &__menu-container{
+        grid-column: col-start 4 / -1;
+    }
+
+    &__main-text{
+        grid-column: col-start 2 / col-end 3;
+        grid-row-start: 3;
+    }
+
+}
+
+.navigation{
+
+
+    &__list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.btn-explore{
+    color: black;
+    background-color: $color-white;
+    border-radius: 100%;
+    width: 27.4rem;
+    height: 27.4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column-start: col-start 6;
+    grid-row-start: 3;
+    align-self: flex-end;
+
+    cursor: pointer;
+}
