@@ -1,36 +1,31 @@
-.header{
-    background-image: url('../../assets/home/background-home-desktop.jpg');
+.header {
+    background-image: url("../../assets/home/background-home-desktop.jpg");
     background-size: cover;
     background-position: bottom;
 
     height: 100vh;
 
     display: grid;
-    grid-template-rows: min-content 1fr min-content .7fr;
-    grid-template-columns: repeat(7, [col-start] 1fr [col-end]) .2fr;
+    grid-template-rows: min-content 1fr min-content 2.5fr;
+    grid-template-columns: 1fr [text-start] min-content [text-end] repeat(5, [col-start] 1fr [col-end]) 0.2fr;
 
-    &__menu-container{
-        grid-column: col-start 4 / -1;
+    &__menu-container {
+        margin: 4rem 0;
+        grid-column: text-end / -1;
     }
 
-    &__main-text{
-        grid-column: col-start 2 / col-end 3;
+    &__main-text {
+        grid-column-start: text-start;
         grid-row-start: 3;
     }
 
-}
-
-.navigation{
-
-
-    &__list{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    &__logo {
+        align-self: center;
+        justify-self: center;
     }
 }
 
-.btn-explore{
+.btn-explore {
     color: black;
     background-color: $color-white;
     border-radius: 100%;
@@ -41,9 +36,28 @@
     justify-content: center;
     align-items: center;
 
-    grid-column-start: col-start 6;
+    grid-column-start: col-start 4;
     grid-row-start: 3;
     align-self: flex-end;
 
     cursor: pointer;
+    position: relative;
+
+    z-index: 999;
+
+    &::before {
+        content: "";
+        background-color: rgba($color-white, 0.1);
+        width: 27.4rem;
+        height: 27.4rem;
+        border-radius: 100%;
+        transition: 0.2s all;
+        position: absolute;
+    }
+
+    &:hover {
+        &::before {
+            transform: scale(1.5);
+        }
+    }
 }
