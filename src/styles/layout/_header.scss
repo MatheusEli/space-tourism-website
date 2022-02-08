@@ -1,63 +1,19 @@
 .header {
-    background-image: url("../../assets/home/background-home-desktop.jpg");
     background-size: cover;
-    background-position: bottom;
 
     height: 100vh;
 
     display: grid;
-    grid-template-rows: min-content 1fr min-content .8fr;
-    grid-template-columns: 1fr [text-start] min-content [text-end] repeat(5, [col-start] 1fr [col-end]) 0.2fr;
+    grid-template-rows: min-content 1fr .1fr;
+    grid-template-columns: repeat(8, [col-start] 1fr [col-end]);
 
     &__menu-container {
-        margin: 4rem 0;
-        grid-column: text-end / -1;
-    }
-
-    &__main-text {
-        grid-column-start: text-start;
-        grid-row-start: 3;
+        margin: 4rem 0 4rem 5%;
+        grid-column: col-start 4 / -1;
     }
 
     &__logo {
         align-self: center;
         justify-self: center;
-    }
-}
-
-.btn-explore {
-    color: black;
-    background-color: $color-white;
-    border-radius: 100%;
-    width: 27.4rem;
-    height: 27.4rem;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    grid-column-start: col-start 4;
-    grid-row-start: 3;
-    align-self: flex-end;
-
-    cursor: pointer;
-    position: relative;
-
-    z-index: 999;
-
-    &::before {
-        content: "";
-        background-color: rgba($color-white, 0.1);
-        width: 27.4rem;
-        height: 27.4rem;
-        border-radius: 100%;
-        transition: 0.2s all;
-        position: absolute;
-    }
-
-    &:hover {
-        &::before {
-            transform: scale(1.5);
-        }
     }
 }

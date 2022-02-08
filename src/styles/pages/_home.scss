@@ -1,0 +1,55 @@
+app-home {
+    align-self: center;
+    grid-row: 2 / -1;
+    grid-column: col-start 1 / -1;
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-columns: 1fr [text-start] min-content [text-end] repeat(5, [col-start] 1fr [col-end]) 0.2fr;
+}
+
+.home{
+
+    &__main-text {
+        grid-column-start: text-start;
+        grid-row-start: 1;
+    }
+}
+
+
+.btn-explore {
+    color: black;
+    background-color: $color-white;
+    border-radius: 100%;
+    width: 27.4rem;
+    height: 27.4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column-start: col-start 4;
+    grid-row-start: 1;
+    align-self: flex-end;
+
+    cursor: pointer;
+    position: relative;
+
+    z-index: 999;
+
+    &::before {
+        content: "";
+        background-color: rgba($color-white, 0.1);
+        width: 27.4rem;
+        height: 27.4rem;
+        border-radius: 100%;
+        transition: 0.2s all;
+        position: absolute;
+    }
+
+    &:hover {
+        &::before {
+            transform: scale(1.5);
+        }
+    }
+}
+

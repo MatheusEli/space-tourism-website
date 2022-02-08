@@ -32,6 +32,7 @@
         padding: 4rem 0;
         border-bottom: 3px solid transparent;
         cursor: pointer;
+        transition: .2s all;
 
         &:hover {
             border-bottom: 3px solid rgba($color-white, 0.5);

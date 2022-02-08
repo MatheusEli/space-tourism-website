@@ -9,11 +9,13 @@ body {
 .heading-primary{
     font-size: 15rem;
     font-weight: 400;
+    text-transform: uppercase;
 }
 
 .heading-secondary{
     font-size: 10rem;
     font-weight: 400;
+    text-transform: uppercase;
 }
 
 .heading-tertiary{
@@ -28,6 +30,7 @@ body {
 
 .heading-quinary{
     font-family: $font-secondary;
+    text-transform: uppercase;
     font-size: 2.8rem;
     letter-spacing: 4.75px;
     font-weight: 400;
@@ -39,6 +42,7 @@ body {
 }
 
 .subheading-secondary{
+    font-family: $font-secondary;
     font-size: 1.4rem;
     font-weight: 400;
     letter-spacing: 2.35px;
