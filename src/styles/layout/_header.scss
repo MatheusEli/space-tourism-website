@@ -6,7 +6,7 @@
     height: 100vh;
 
     display: grid;
-    grid-template-rows: min-content 1fr min-content 2.5fr;
+    grid-template-rows: min-content 1fr min-content .8fr;
     grid-template-columns: 1fr [text-start] min-content [text-end] repeat(5, [col-start] 1fr [col-end]) 0.2fr;
 
     &__menu-container {
