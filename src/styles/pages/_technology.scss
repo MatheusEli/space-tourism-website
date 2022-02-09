@@ -1,41 +1,44 @@
-
-app-tech{
+app-tech {
     align-self: center;
     grid-row: 2 / -1;
     grid-column: col-start 2 / -1;
     display: grid;
-    grid-template-rows: repeat(2, min-content);
+    grid-template-rows: repeat(2, min-content) 8rem;
 }
-.app-technology{
+.app-technology {
     display: grid;
     grid-column-gap: 8rem;
-    grid-template-columns: [menu-start] min-content 
-    [menu-end main-start] 1fr [main-end];
+    grid-template-columns:
+        [menu-start] min-content
+        [menu-end main-start] 1fr [main-end];
 }
 
-.app-technology2{
+app-launch-vehicle, app-spaceport, app-space-capsule {
+    grid-row-start: 1;
+    animation: moveInLeft 0.7s ease-out;
     grid-column: main-start / -1;
     display: grid;
-    grid-template-columns: 4fr repeat(2, [col-start] 1fr [col-end]);
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10rem;
 }
-.technology{
-
-    &__space-text{
-        animation: moveInRight .7s ease-out;
+.technology {
+    &__space-text {
+        animation: moveInRight 0.7s ease-out;
     }
 
-    &__navigation{
+    &__navigation {
         grid-row-start: 1;
         grid-column: menu-start / menu-end;
         align-self: center;
+        animation: moveInRight 0.7s ease-out;
     }
 
-    &__list{
+    &__list {
         list-style: none;
     }
 
-    &__item{
-        border: 1px solid rgba($color-white, .25);
+    &__item {
+        border: 1px solid rgba($color-white, 0.25);
         border-radius: 100%;
         width: 8rem;
         height: 8rem;
@@ -45,28 +48,28 @@ app-tech{
         align-items: center;
         cursor: pointer;
 
-        &:not(:last-of-type){
+        &:not(:last-of-type) {
             margin-bottom: 3rem;
         }
 
-        &:active{
+        &:active {
             background-color: $color-white;
             color: black;
         }
     }
 
-    &__main-text{
+    &__main-text {
         grid-row-start: 1;
         grid-column-start: 1;
         align-self: center;
-        color: #D0D6F9;
+        color: #d0d6f9;
 
-        .heading-tertiary{
+        .heading-tertiary {
             color: $color-white;
         }
     }
-    
-    &__image{
-        grid-column-start: col-start 2;
+
+    &__image {
+        grid-column-start: 2;
     }
 }
