@@ -3,20 +3,20 @@ app-home {
     grid-row: 2 / -1;
     grid-column: col-start 1 / -1;
     display: grid;
-    grid-template-rows: min-content;
+    grid-template-rows: min-content 8rem;
     grid-template-columns: 1fr [text-start] min-content [text-end] repeat(5, [col-start] 1fr [col-end]) 0.2fr;
 }
 
-.home{
-
+.home {
     &__main-text {
+        animation: moveInRight 1s ease-out;
         grid-column-start: text-start;
         grid-row-start: 1;
     }
 }
 
-
 .btn-explore {
+    animation: moveInRight 1s ease-out;
     color: black;
     background-color: $color-white;
     border-radius: 100%;
@@ -52,4 +52,3 @@ app-home {
         }
     }
 }
-
