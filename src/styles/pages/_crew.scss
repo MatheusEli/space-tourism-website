@@ -4,16 +4,30 @@ app-crew {
     grid-column: col-start 1 / -1;
     display: grid;
     grid-template-rows: repeat(2, min-content) 1fr;
-    grid-template-columns: 1fr [main-start] 50rem [main-end] 
-    1fr [image-start] min-content [image-end] 1fr;
+    grid-template-columns: 1fr [main-start] 65rem [main-end] 
+    1fr [image-start] 51.4rem [image-end] 1fr;
     position: relative;
 }
 
+app-douglas, app-mark, app-anousheh, app-victor{
+    align-self: flex-end;
+    grid-row: 2 / -1;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-rows: repeat(2, min-content) 1fr;
+    grid-template-columns: 1fr [main-start] 65rem [main-end] 
+    1fr [image-start] 51.4rem [image-end] 1fr;
+}
+
 .app-crew {
-    grid-row-start: 2;
+    grid-row-start: 1;
     grid-column-start: main-start;
     align-self: center;
     animation: moveInRight 0.7s ease-out;
+
+    .paragraph{
+        width: 70%;
+    }
 }
 
 .crew {
@@ -51,6 +65,7 @@ app-crew {
         height: 1.5rem;
         border-radius: 100%;
         opacity: .17;
+        cursor: pointer;
     }
 
     &__button:first-of-type::after{
