@@ -4,7 +4,7 @@ app-crew {
     grid-column: col-start 1 / -1;
     display: grid;
     grid-template-rows: repeat(2, min-content) 1fr;
-    grid-template-columns: 1fr [main-start] 65rem [main-end] 
+    grid-template-columns: 1fr [main-start] 65rem [main-end]
     1fr [image-start] 51.4rem [image-end] 1fr;
     position: relative;
 }
@@ -15,7 +15,7 @@ app-douglas, app-mark, app-anousheh, app-victor{
     grid-column: 1 / -1;
     display: grid;
     grid-template-rows: repeat(2, min-content) 1fr;
-    grid-template-columns: 1fr [main-start] 65rem [main-end] 
+    grid-template-columns: 1fr [main-start] 65rem [main-end]
     1fr [image-start] 51.4rem [image-end] 1fr;
 }
 
@@ -35,13 +35,13 @@ app-douglas, app-mark, app-anousheh, app-victor{
     &__meet-text {
         animation: moveInRight 0.7s ease-out;
         grid-row-start: 1;
-        grid-column: main-start / -1;
+        grid-column-start: main-start;
     }
-    
+
     &__commander-text {
         opacity: 0.5;
     }
-    
+
     &__buttons-list {
         grid-column: main-start;
         display: flex;

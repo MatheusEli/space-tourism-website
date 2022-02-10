@@ -24,6 +24,7 @@ app-launch-vehicle, app-spaceport, app-space-capsule {
 .technology {
     &__space-text {
         animation: moveInRight 0.7s ease-out;
+        width: 35rem;
     }
 
     &__navigation {
