@@ -54,10 +54,14 @@ app-launch-vehicle, app-spaceport, app-space-capsule {
         &:not(:last-of-type) {
             margin-bottom: 3rem;
         }
-
+        
         &:active {
             background-color: $color-white;
             color: black;
+        }
+        
+        &:hover{
+            border: 1px solid rgba($color-white, 1);
         }
     }
 

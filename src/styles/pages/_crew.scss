@@ -71,6 +71,9 @@ app-victor {
         cursor: pointer;
     }
 
+    &__button:hover::after{
+        opacity: .5;
+    }
     &__button:active::after, &__button:focus::after{
         opacity: 1;
     }
