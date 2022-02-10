@@ -4,19 +4,24 @@ app-crew {
     grid-column: col-start 1 / -1;
     display: grid;
     grid-template-rows: repeat(2, min-content) 1fr;
-    grid-template-columns: 1fr [main-start] 65rem [main-end]
-    1fr [image-start] 51.4rem [image-end] 1fr;
+    grid-template-columns:
+        1fr [main-start] 65rem [main-end]
+        1fr [image-start] 51.4rem [image-end] 1fr;
     position: relative;
 }
 
-app-douglas, app-mark, app-anousheh, app-victor{
+app-douglas,
+app-mark,
+app-anousheh,
+app-victor {
     align-self: flex-end;
     grid-row: 2 / -1;
     grid-column: 1 / -1;
     display: grid;
-    grid-template-rows: repeat(2, min-content) 1fr;
-    grid-template-columns: 1fr [main-start] 65rem [main-end]
-    1fr [image-start] 51.4rem [image-end] 1fr;
+    grid-template-rows: minmax(70rem, min-content);
+    grid-template-columns:
+        1fr [main-start] 65rem [main-end]
+        1fr [image-start] 51.4rem [image-end] 1fr;
 }
 
 .app-crew {
@@ -25,13 +30,12 @@ app-douglas, app-mark, app-anousheh, app-victor{
     align-self: center;
     animation: moveInRight 0.7s ease-out;
 
-    .paragraph{
+    .paragraph {
         width: 70%;
     }
 }
 
 .crew {
-
     &__meet-text {
         animation: moveInRight 0.7s ease-out;
         grid-row-start: 1;
@@ -50,13 +54,12 @@ app-douglas, app-mark, app-anousheh, app-victor{
         position: absolute;
         bottom: 8%;
         animation: moveInLeft 1s ease-out;
-
     }
-
+    
     &__button:not(:last-child) {
         margin-right: 3rem;
     }
-
+    
     &__button::after {
         content: "";
         display: inline-block;
@@ -64,16 +67,17 @@ app-douglas, app-mark, app-anousheh, app-victor{
         width: 1.5rem;
         height: 1.5rem;
         border-radius: 100%;
-        opacity: .17;
+        opacity: 0.17;
         cursor: pointer;
     }
 
-    &__button:first-of-type::after{
+    &__button:active::after, &__button:focus::after{
         opacity: 1;
     }
-
-    &__image{
+    
+    &__image {
         grid-column-start: image-start;
         animation: moveInLeft 1s ease-out;
+        align-self: flex-end;
     }
 }

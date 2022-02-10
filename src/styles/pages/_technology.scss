@@ -18,6 +18,7 @@ app-launch-vehicle, app-spaceport, app-space-capsule {
     animation: moveInLeft 0.7s ease-out;
     grid-column: main-start / -1;
     display: grid;
+    grid-template-rows: minmax(52.7rem, min-content);
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10rem;
 }
@@ -48,7 +49,8 @@ app-launch-vehicle, app-spaceport, app-space-capsule {
         justify-content: center;
         align-items: center;
         cursor: pointer;
-
+        transition: .2s all;
+        
         &:not(:last-of-type) {
             margin-bottom: 3rem;
         }
@@ -73,4 +75,9 @@ app-launch-vehicle, app-spaceport, app-space-capsule {
     &__image {
         grid-column-start: 2;
     }
+}
+
+.activated {
+    background-color: $color-white;
+    color: black;
 }
