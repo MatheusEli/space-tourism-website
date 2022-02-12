@@ -5,8 +5,8 @@ app-crew {
     display: grid;
     grid-template-rows: repeat(2, min-content) 1fr;
     grid-template-columns:
-        1fr [main-start] 65rem [main-end]
-        1fr [image-start] 51.4rem [image-end] 1fr;
+        minmax(1rem, 1fr) [main-start] 65rem [main-end]
+        1fr [image-start] 51.4rem [image-end] minmax(1rem, 1fr);
     position: relative;
 }
 
@@ -55,11 +55,11 @@ app-victor {
         bottom: 8%;
         animation: moveInLeft 1s ease-out;
     }
-    
+
     &__button:not(:last-child) {
         margin-right: 3rem;
     }
-    
+
     &__button::after {
         content: "";
         display: inline-block;
@@ -77,7 +77,7 @@ app-victor {
     &__button:active::after, &__button:focus::after{
         opacity: 1;
     }
-    
+
     &__image {
         grid-column-start: image-start;
         animation: moveInLeft 1s ease-out;
