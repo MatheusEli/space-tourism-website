@@ -2,7 +2,6 @@
     background-size: cover;
     background-color: black;
     min-height: 100vh;
-
     display: grid;
     grid-template-rows: min-content 1fr;
     grid-template-columns: repeat(8, [col-start] 1fr [col-end]);
