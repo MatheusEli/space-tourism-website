@@ -60,6 +60,7 @@ app-moon, app-mars, app-europa, app-titan {
         animation: moveInRight 2s ease-out;
         grid-column-start: img-start;
         grid-row-start: 2;
+        width: 44rem;
     }
 
     &__main-text {

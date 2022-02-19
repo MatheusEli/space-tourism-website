@@ -6,7 +6,7 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 })
 export class HomeComponent implements OnInit{
     
-    public backgroundName = '../../assets/home/background-home-desktop.jpg'
+    public backgroundName = '../../assets/home/background-home-tablet.jpg'
     public headerEl = document.getElementById('header');
 
     ngOnInit(): void {

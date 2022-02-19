@@ -13,14 +13,15 @@ app-tech {
         [menu-end main-start] 1fr [main-end];
 }
 
-app-launch-vehicle, app-spaceport, app-space-capsule {
+app-launch-vehicle,
+app-spaceport,
+app-space-capsule {
     grid-row-start: 1;
     animation: moveInLeft 0.7s ease-out;
     grid-column: main-start / -1;
     display: grid;
     grid-template-rows: minmax(52.7rem, min-content);
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 10rem;
+    grid-template-columns: 1fr min-content;
 }
 .technology {
     &__space-text {
@@ -49,18 +50,18 @@ app-launch-vehicle, app-spaceport, app-space-capsule {
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        transition: .2s all;
-        
+        transition: 0.2s all;
+
         &:not(:last-of-type) {
             margin-bottom: 3rem;
         }
-        
+
         &:active {
             background-color: $color-white;
             color: black;
         }
-        
-        &:hover{
+
+        &:hover {
             border: 1px solid rgba($color-white, 1);
         }
     }
@@ -74,10 +75,19 @@ app-launch-vehicle, app-spaceport, app-space-capsule {
         .heading-tertiary {
             color: $color-white;
         }
+
+        .paragraph {
+            width: 52rem;
+        }
     }
 
     &__image {
         grid-column-start: 2;
+        align-self: center;
+
+        @media only screen and (max-width: $bp-extra-large){
+            width: 35rem;
+        }
     }
 }
 

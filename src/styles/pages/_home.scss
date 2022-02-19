@@ -5,6 +5,14 @@ app-home {
     display: grid;
     grid-template-rows: min-content 8rem;
     grid-template-columns: 1fr [text-start] min-content [text-end] repeat(5, [col-start] 1fr [col-end]) 0.2fr;
+
+    @media only screen and (max-width: $bp-large) {
+        align-self: flex-start;
+        grid-row-start: 2;
+        grid-row-gap: 15%;
+        grid-template-rows: repeat(2, min-content);
+        grid-template-columns: .5fr [text-start] minmax(min-content, 1fr) [text-end] .5fr;
+    }
 }
 
 .home {
@@ -12,6 +20,12 @@ app-home {
         animation: moveInRight 1s ease-out;
         grid-column-start: text-start;
         grid-row-start: 1;
+
+        @media only screen and (max-width: $bp-large) {
+            text-align: center;
+            justify-self: center;
+            margin-top: 8rem;
+        }
     }
 }
 
@@ -31,10 +45,18 @@ app-home {
     grid-row-start: 1;
     align-self: flex-end;
 
+
+
     cursor: pointer;
     position: relative;
 
     z-index: 999;
+
+    @media only screen and (max-width: $bp-large) {
+        justify-self: center;
+        grid-column-start: text-start;
+        grid-row-start: 2;
+    }
 
     &::before {
         content: "";

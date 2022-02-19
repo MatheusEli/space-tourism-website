@@ -8,6 +8,11 @@ app-crew {
         minmax(1rem, 1fr) [main-start] 65rem [main-end]
         1fr [image-start] 51.4rem [image-end] minmax(1rem, 1fr);
     position: relative;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-template-columns: minmax(1rem, 1fr) [main-start] min-content [main-end] minmax(1rem, 1fr);
+        text-align: center;
+    }
 }
 
 app-douglas,
@@ -20,8 +25,15 @@ app-victor {
     display: grid;
     grid-template-rows: minmax(70rem, min-content);
     grid-template-columns:
-        1fr [main-start] 65rem [main-end]
-        1fr [image-start] 51.4rem [image-end] 1fr;
+        minmax(1rem, 1fr) [main-start]
+        65rem [main-end] 1fr [image-start] 51.4rem [image-end] minmax(1rem, 1fr);
+
+    @media only screen and (max-width: $bp-large) {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        grid-template-rows: min-content;
+        grid-template-columns: 1fr [main-start] min-content [main-end] 1fr;
+    }
 }
 
 .app-crew {
@@ -32,6 +44,10 @@ app-victor {
 
     .paragraph {
         width: 70%;
+
+        @media only screen and(max-width: $bp-large) {
+            width: 100%;
+        }
     }
 }
 
@@ -71,10 +87,11 @@ app-victor {
         cursor: pointer;
     }
 
-    &__button:hover::after{
-        opacity: .5;
+    &__button:hover::after {
+        opacity: 0.5;
     }
-    &__button:active::after, &__button:focus::after{
+    &__button:active::after,
+    &__button:focus::after {
         opacity: 1;
     }
 
@@ -82,5 +99,10 @@ app-victor {
         grid-column-start: image-start;
         animation: moveInLeft 1s ease-out;
         align-self: flex-end;
+        width: 50rem;
+
+        @media only screen and (max-width: $bp-large){
+            grid-column-start: 2;
+        }
     }
 }
