@@ -18,5 +18,10 @@
         </ul>
     </nav>
 
-    <router-outlet></router-outlet>
+    <router-outlet (activate)='onActivate($event)'></router-outlet>
+    
+    <picture class="technology__image">
+        <source srcset = "{{imgPath}}-landscape.jpg" media = "(max-width: 62.5em)">
+        <img src="{{imgPath}}-portrait.jpg" alt="Launch Vehicle image" class="technology__image">
+    </picture>
 </div>

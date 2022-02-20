@@ -4,13 +4,24 @@ app-tech {
     grid-column: col-start 2 / -1;
     display: grid;
     grid-template-rows: repeat(2, min-content) 8rem;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-column: col-start 1/-1;
+    }
 }
 .app-technology {
     display: grid;
     grid-column-gap: 8rem;
     grid-template-columns:
         [menu-start] min-content
-        [menu-end main-start] 1fr [main-end];
+        [menu-end main-start] 1fr [main-end] min-content;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-row-gap: 5vh;
+        grid-column-gap: 0;
+        grid-template-rows: repeat(3, min-content);
+        grid-template-columns: [main-start] 1fr [main-end];
+    }
 }
 
 app-launch-vehicle,
@@ -21,12 +32,20 @@ app-space-capsule {
     grid-column: main-start / -1;
     display: grid;
     grid-template-rows: minmax(52.7rem, min-content);
-    grid-template-columns: 1fr min-content;
+    grid-template-columns: 1fr;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-row-start: 3;
+        grid-column: 1 / -1;
+        grid-template-rows: min-content;
+    }
 }
 .technology {
     &__space-text {
         animation: moveInRight 0.7s ease-out;
         width: 35rem;
+        text-align: left;
+        margin-left: 4%;
     }
 
     &__navigation {
@@ -34,10 +53,20 @@ app-space-capsule {
         grid-column: menu-start / menu-end;
         align-self: center;
         animation: moveInRight 0.7s ease-out;
+
+        @media only screen and (max-width: $bp-large) {
+            grid-row-start: 2;
+            grid-column: 1 / -1;
+        }
     }
 
     &__list {
         list-style: none;
+        @media only screen and (max-width: $bp-large) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     &__item {
@@ -54,6 +83,10 @@ app-space-capsule {
 
         &:not(:last-of-type) {
             margin-bottom: 3rem;
+            @media only screen and (max-width: $bp-large) {
+                margin-bottom: 0;
+                margin-right: 2.5rem;
+            }
         }
 
         &:active {
@@ -72,6 +105,11 @@ app-space-capsule {
         align-self: center;
         color: #d0d6f9;
 
+        @media only screen and (max-width: $bp-large) {
+            text-align: center;
+            justify-self: center;
+        }
+
         .heading-tertiary {
             color: $color-white;
         }
@@ -82,11 +120,19 @@ app-space-capsule {
     }
 
     &__image {
-        grid-column-start: 2;
+        grid-column-start: 3;
+        grid-row-start: 1;
         align-self: center;
 
-        @media only screen and (max-width: $bp-extra-large){
+        @media only screen and (max-width: $bp-extra-large) {
             width: 35rem;
+        }
+        @media only screen and (max-width: $bp-large) {
+            width: 100vw;
+            object-fit: cover;
+            height: 45vh;
+            grid-column-start: 1;
+            animation: moveInLeft 0.7s ease-out;
         }
     }
 }
