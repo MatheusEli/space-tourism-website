@@ -32,7 +32,7 @@ app-victor {
         grid-row-start: 2;
         grid-column-start: 1;
         grid-template-rows: min-content;
-        grid-template-columns: 1fr [main-start] min-content [main-end] 1fr;
+        grid-template-columns: 1fr [main-start] minmax(min-content, 80%) [main-end] 1fr;
     }
 }
 
@@ -41,6 +41,10 @@ app-victor {
     grid-column-start: main-start;
     align-self: center;
     animation: moveInRight 0.7s ease-out;
+
+    @media only screen and (max-width: $bp-large) {
+        margin: 6rem 0 10rem 0;
+    }
 
     .paragraph {
         width: 70%;
@@ -56,6 +60,12 @@ app-victor {
         animation: moveInRight 0.7s ease-out;
         grid-row-start: 1;
         grid-column-start: main-start;
+
+        @media only screen and (max-width: $bp-large) {
+            grid-column-start: 1;
+            text-align: left;
+            margin-left: 8%;
+        }
     }
 
     &__commander-text {
@@ -70,6 +80,13 @@ app-victor {
         position: absolute;
         bottom: 8%;
         animation: moveInLeft 1s ease-out;
+
+        @media only screen and (max-width: $bp-large) {
+            bottom: auto;
+            transform: translate(-50%, -50%);
+            top: 40%;
+            left: 50%;
+        }
     }
 
     &__button:not(:last-child) {
@@ -101,8 +118,12 @@ app-victor {
         align-self: flex-end;
         width: 50rem;
 
-        @media only screen and (max-width: $bp-large){
+        @media only screen and (max-width: $bp-large) {
             grid-column-start: 2;
+            justify-self: center;
+            object-fit: contain;
+            object-position: bottom;
+            height: 60rem;
         }
     }
 }
