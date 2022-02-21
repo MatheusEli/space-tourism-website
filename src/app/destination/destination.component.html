@@ -2,6 +2,7 @@
     <span style = "opacity: .25; font-weight: 700;">01</span> Pick your destination
 </h5>
 
+<img src="{{imgPath}}.png" alt="Moon Image destination" class="destination__image">
 
 <ul class="destination__list">
 
@@ -11,4 +12,4 @@
     <li class="destination__item nav-text" routerLink = "titan">Titan</li>
 </ul>
 
-<router-outlet></router-outlet>
+<router-outlet (activate) = "onActivate($event)"></router-outlet>

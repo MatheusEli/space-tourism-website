@@ -12,6 +12,5 @@ export class CrewComponent implements OnInit{
     ngOnInit(): void {
         this.headerEl.style.backgroundImage = `url(${this.backgroundName})`;
         this.headerEl.style.backgroundPosition = 'center';
-        document.getElementById('douglas-button').focus();
     } 
 }

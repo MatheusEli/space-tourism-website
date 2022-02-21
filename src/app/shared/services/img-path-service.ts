@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
 @Injectable()
-export class ImgTechService{
+export class ImgPathService{
     imgPath:string;
 
     changePath(newPath: string): void{

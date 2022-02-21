@@ -5,22 +5,42 @@ app-destination {
     display: grid;
     grid-template-rows: repeat(2, min-content);
     grid-template-columns: 1fr [img-start] 44.5rem [img-end] 1fr [main-start] 43rem [main-end] 1fr;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-template-rows: repeat(4, min-content);
+        grid-template-columns: [main-start] 100% [main-end];
+    }
 }
 
-app-moon, app-mars, app-europa, app-titan {
+app-moon,
+app-mars,
+app-europa,
+app-titan {
     align-self: center;
     grid-row: 2 / -1;
     grid-column: 1 / -1;
     display: grid;
     grid-template-rows: repeat(2, min-content) 8rem;
-    grid-template-columns: 1fr [img-start] min-content [img-end] 1fr [main-start] 43rem [main-end] 1fr;
+    grid-template-columns: 1fr [img-start] 44.5rem [img-end] 1fr [main-start] 43rem [main-end] 1fr;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-row-start: 4;
+        grid-template-columns: 1fr [text-start] minmax(min-content, 75%) [text-end] 1fr;
+        justify-self: center;
+    }
 }
 
 .destination {
     &__pick-text {
-        animation: moveInRight .7s ease-out;
+        animation: moveInRight 0.7s ease-out;
         grid-row-start: 1;
         grid-column-start: img-start;
+
+        @media only screen and (max-width: $bp-large) {
+            padding-bottom: 5rem !important;
+            margin-left: 4%;
+            grid-column-start: main-start;
+        }
     }
 
     &__list {
@@ -32,27 +52,34 @@ app-moon, app-mars, app-europa, app-titan {
         align-items: center;
         list-style: none;
         align-self: flex-end;
+
+        @media only screen and (max-width: $bp-large) {
+            grid-row-start: 3;
+            justify-content: center;
+            align-self: center;
+            margin-top: 6rem;
+        }
     }
 
-    &__item{
+    &__item {
         cursor: pointer;
-        color: #D0D6F9;
+        color: #d0d6f9;
         align-self: stretch;
-        transition: .2s all;
+        transition: 0.2s all;
         padding-bottom: 1rem;
         border-bottom: 3px solid transparent;
     }
 
-    &__item:hover{
-        border-bottom: 3px solid rgba($color-white, .5);
+    &__item:hover {
+        border-bottom: 3px solid rgba($color-white, 0.5);
     }
 
-    &__item:active{
+    &__item:active {
         color: $color-white;
         border-bottom: 3px solid $color-white;
     }
 
-    &__item:not(:last-of-type){
+    &__item:not(:last-of-type) {
         margin-right: 3rem;
     }
 
@@ -61,24 +88,35 @@ app-moon, app-mars, app-europa, app-titan {
         grid-column-start: img-start;
         grid-row-start: 2;
         width: 44rem;
+
+        @media only screen and (max-width: $bp-large) {
+            grid-column-start: main-start;
+            justify-self: center;
+            width: 35rem;
+        }
     }
 
     &__main-text {
-        animation: moveInRight .7s ease-out;
+        animation: moveInRight 0.7s ease-out;
         grid-column: main-start;
         grid-row-start: 2;
+
+        @media only screen and (max-width: $bp-large) {
+            grid-column: text-start / text-end;
+            text-align: center;
+        }
     }
 
-    &__information{
+    &__information {
         display: flex;
         justify-content: space-between;
 
         margin-top: 5rem;
         padding-top: 3rem;
-        border-top: 1px solid #383B4B;
+        border-top: 1px solid #383b4b;
     }
 
-    &__pick-text{
+    &__pick-text {
         padding-bottom: 10rem;
     }
 }

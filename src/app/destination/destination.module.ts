@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ImgPathService } from '../shared/services/img-path-service';
 import { DestinationRoutingModule } from './destination-routing.module';
 import { DestinationComponent } from './destination.component';
 import { EuropaComponent } from './europa/europa.component';
@@ -19,6 +20,6 @@ import { TitanComponent } from './titan/titan.component';
       CommonModule,
       DestinationRoutingModule
   ],
-  providers: []
+  providers: [ImgPathService]
 })
 export class DestinationModule { }

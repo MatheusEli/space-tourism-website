@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from "@angular/core";
-import { ImgTechService } from "src/app/shared/services/img-tech-service";
+import { ImgPathService } from "src/app/shared/services/img-path-service";
 
 @Component({
     selector: 'app-launch-vehicle',
@@ -7,7 +7,7 @@ import { ImgTechService } from "src/app/shared/services/img-tech-service";
 })
 export class LaunchVehicleComponent implements OnInit, OnDestroy{
 
-    constructor(private imgPathService: ImgTechService){
+    constructor(private imgPathService: ImgPathService){
         this.imgPathService.changePath('../../../assets/technology/image-launch-vehicle');
     }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ImgTechService } from "../shared/services/img-tech-service";
+import { ImgPathService } from "../shared/services/img-path-service";
 
 @Component({
     selector: 'app-tech',
@@ -11,7 +11,7 @@ export class TechComponent implements OnInit {
     public headerEl = document.getElementById('header');
     public imgPath:string;
 
-    constructor(private imgPathService: ImgTechService){
+    constructor(private imgPathService: ImgPathService){
         this.imgPath = imgPathService.getPath();
     }
 
