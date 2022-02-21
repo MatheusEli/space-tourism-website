@@ -5,13 +5,64 @@
     grid-template-rows: min-content 1fr;
     grid-template-columns: repeat(8, [col-start] 1fr [col-end]);
 
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-rows: 8rem 1fr;
+    }
+
     &__menu-container {
         margin: 4rem 0 4rem 5%;
         grid-column: col-start 4 / -1;
+        transition: .2s all;
+        
+        @media only screen and (max-width: $bp-medium) {
+            margin: 0;
+            grid-column: col-start 8 / -1;
+            align-self: center;
+            justify-self: center;
+            display: none;
+
+            border: none;
+            border-radius: 0;
+
+            background-color: $color-secondary;
+            height: 3px;
+            width: 3.5rem;
+            margin-right: 2rem;
+            display: block;
+
+            &::before,
+            &::after {
+                content: "";
+                height: 3px;
+                width: 3.5rem;
+                display: block;
+                background-color: $color-secondary;
+            }
+
+            &::before {
+                transform: translateY(-1.3rem);
+            }
+            
+            &::after {
+                transform: translateY(1rem);
+            }
+
+            &:active, &:hover {
+                .navigation__nav{
+                    display: block;
+                }
+            }
+        }
     }
 
     &__logo {
         align-self: center;
         justify-self: center;
+
+        @media only screen and (max-width: $bp-medium){
+            width: 4rem;
+            height: 4rem;
+            margin-left: 2rem;
+        }
     }
 }

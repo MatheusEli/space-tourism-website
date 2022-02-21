@@ -4,6 +4,7 @@
         -moz-backdrop-filter: blur(26px);
         backdrop-filter: blur(26px);
         position: relative;
+        transition: 0.2s all;
 
         &::before {
             content: "";
@@ -16,9 +17,20 @@
             opacity: 0.25;
             mix-blend-mode: normal;
 
-            @media only screen and (max-width: $bp-largest){
+            @media only screen and (max-width: $bp-largest) {
                 display: none;
             }
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            display: none;
+            width: 70vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            animation: moveInRight 0.2s ease-out;
         }
     }
 
@@ -30,13 +42,19 @@
         margin: 0 auto;
         list-style: none;
         width: 100%;
+
+        @media only screen and (max-width: $bp-medium) {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 10rem;
+        }
     }
 
     &__item {
         padding: 4rem 0;
         border-bottom: 3px solid transparent;
         cursor: pointer;
-        transition: .2s all;
+        transition: 0.2s all;
 
         &:hover {
             border-bottom: 3px solid rgba($color-white, 0.5);
@@ -47,10 +65,37 @@
             border-bottom: 3px solid $color-white;
         }
 
-        @media only screen and (max-width: $bp-large){
-            span{
+        @media only screen and (max-width: $bp-large) and (min-width: $bp-medium) {
+            span {
                 display: none;
             }
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            padding: 1.5rem 0;
+            border: none;
+
+            &:hover {
+                border: none;
+            }
+            &:active,
+            &:focus {
+                border: none;
+            }
+        }
+    }
+
+    &__close-button {
+        display: none;
+
+        @media only screen and (max-width: $bp-medium) {
+            display: block;
+            color: $color-secondary;
+            width: 2.4rem;
+            position: absolute;
+            top: 3rem;
+            right: 3rem;
+            cursor: pointer;
         }
     }
 }

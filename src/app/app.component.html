@@ -1,7 +1,8 @@
 <header class="header" id = "header">
     <img src="../assets/shared/logo.svg" alt="Logo Space Tourism Website" class="header__logo">
     <div class="header__menu-container">
-        <nav class="navigation__nav">
+        <nav class="navigation__nav" id = "menu">
+            <img src="../assets/shared/icon-close.svg" alt="Close icon" class="navigation__close-button" (click) = "closeMenu()">
             <ul class="navigation__list">
                 <li class="navigation__item nav-text" routerLink = 'home'>
                     <span style="margin-right: 1rem; font-weight: 600;">00</span>

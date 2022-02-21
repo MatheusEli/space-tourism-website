@@ -11,7 +11,12 @@ app-home {
         grid-row-start: 2;
         grid-row-gap: 15%;
         grid-template-rows: repeat(2, min-content);
-        grid-template-columns: .5fr [text-start] minmax(min-content, 1fr) [text-end] .5fr;
+        grid-template-columns: 0.5fr [text-start] minmax(min-content, 1fr) [text-end] 0.5fr;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 0.5fr [text-start] minmax(min-content, 80%) [text-end] 0.5fr;
     }
 }
 
@@ -25,6 +30,10 @@ app-home {
             text-align: center;
             justify-self: center;
             margin-top: 8rem;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            margin-top: 4rem;
         }
     }
 }
@@ -45,8 +54,6 @@ app-home {
     grid-row-start: 1;
     align-self: flex-end;
 
-
-
     cursor: pointer;
     position: relative;
 
@@ -58,6 +65,11 @@ app-home {
         grid-row-start: 2;
     }
 
+    @media only screen and (max-width: $bp-medium) {
+        width: 15rem;
+        height: 15rem;
+    }
+
     &::before {
         content: "";
         background-color: rgba($color-white, 0.1);
@@ -66,6 +78,11 @@ app-home {
         border-radius: 100%;
         transition: 0.2s all;
         position: absolute;
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 15rem;
+            height: 15rem;
+        }
     }
 
     &:hover {
