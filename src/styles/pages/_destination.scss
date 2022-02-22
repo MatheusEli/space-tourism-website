@@ -41,6 +41,11 @@ app-titan {
             margin-left: 4%;
             grid-column-start: main-start;
         }
+
+        @media only screen and (max-width: $bp-medium) {
+            margin: 0;
+            text-align: center;
+        }
     }
 
     &__list {
@@ -59,6 +64,10 @@ app-titan {
             align-self: center;
             margin-top: 6rem;
         }
+
+        @media only screen and (max-width: $bp-medium) {
+            margin-top: 3rem;
+        }
     }
 
     &__item {
@@ -74,11 +83,15 @@ app-titan {
         border-bottom: 3px solid rgba($color-white, 0.5);
     }
 
-    &__item:active {
+    &__item:active,
+    &__item:focus {
         color: $color-white;
         border-bottom: 3px solid $color-white;
     }
 
+    &__item:focus-visible {
+        outline: none;
+    }
     &__item:not(:last-of-type) {
         margin-right: 3rem;
     }
@@ -93,6 +106,10 @@ app-titan {
             grid-column-start: main-start;
             justify-self: center;
             width: 35rem;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 17rem;
         }
     }
 
@@ -114,8 +131,18 @@ app-titan {
         margin-top: 5rem;
         padding-top: 3rem;
         border-top: 1px solid #383b4b;
+
+        @media only screen and (max-width: $bp-medium) {
+            flex-direction: column;
+            margin-top: 3rem;
+        }
     }
 
+    &__distance-text {
+        @media only screen and (max-width: $bp-medium) {
+            margin-bottom: 2rem;
+        }
+    }
     &__pick-text {
         padding-bottom: 10rem;
     }

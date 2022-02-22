@@ -29,6 +29,7 @@
             width: 3.5rem;
             margin-right: 2rem;
             display: block;
+            animation: moveInLeft 1s ease-out;
 
             &::before,
             &::after {
@@ -45,12 +46,6 @@
             
             &::after {
                 transform: translateY(1rem);
-            }
-
-            &:active, &:hover {
-                .navigation__nav{
-                    display: block;
-                }
             }
         }
     }

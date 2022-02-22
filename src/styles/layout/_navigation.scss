@@ -4,7 +4,6 @@
         -moz-backdrop-filter: blur(26px);
         backdrop-filter: blur(26px);
         position: relative;
-        transition: 0.2s all;
 
         &::before {
             content: "";
@@ -23,14 +22,16 @@
         }
 
         @media only screen and (max-width: $bp-medium) {
-            display: none;
+            display: block;
             width: 70vw;
             height: 100vh;
             position: absolute;
             top: 0;
             right: 0;
             z-index: 1000;
-            animation: moveInRight 0.2s ease-out;
+            opacity: 0;
+            visibility: hidden;
+            transition: .2s all;
         }
     }
 
@@ -54,7 +55,6 @@
         padding: 4rem 0;
         border-bottom: 3px solid transparent;
         cursor: pointer;
-        transition: 0.2s all;
 
         &:hover {
             border-bottom: 3px solid rgba($color-white, 0.5);
@@ -89,13 +89,14 @@
         display: none;
 
         @media only screen and (max-width: $bp-medium) {
-            display: block;
+            
             color: $color-secondary;
             width: 2.4rem;
             position: absolute;
             top: 3rem;
             right: 3rem;
             cursor: pointer;
+            z-index: 1001;
         }
     }
 }

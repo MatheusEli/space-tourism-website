@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ImgPathService } from "src/app/shared/services/img-path-service";
 
 @Component({
@@ -6,9 +6,13 @@ import { ImgPathService } from "src/app/shared/services/img-path-service";
     templateUrl: './moon.component.html'
 })
 
-export class MoonComponent{
+export class MoonComponent implements OnInit{
 
     constructor(private imgPathService: ImgPathService){
         this.imgPathService.changePath('../../assets/destination/image-moon');
+    }
+
+    ngOnInit(): void {
+        document.getElementById('moon-button').focus();
     }
 }

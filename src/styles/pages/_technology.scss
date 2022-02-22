@@ -22,6 +22,13 @@ app-tech {
         grid-template-rows: repeat(3, min-content);
         grid-template-columns: [main-start] 1fr [main-end];
     }
+
+    .paragraph{
+
+        @media only screen and (max-width: $bp-medium) {
+            margin-top: 1.8rem;
+        }
+    }
 }
 
 app-launch-vehicle,
@@ -46,6 +53,13 @@ app-space-capsule {
         width: 35rem;
         text-align: left;
         margin-left: 4%;
+
+        @media only screen and (max-width: $bp-medium){
+            margin: 0;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 3rem;
+        }
     }
 
     &__navigation {
@@ -81,11 +95,20 @@ app-space-capsule {
         cursor: pointer;
         transition: 0.2s all;
 
+        @media only screen and (max-width: $bp-medium){
+            width: 5rem;
+            height: 5rem;
+        }
+
         &:not(:last-of-type) {
             margin-bottom: 3rem;
             @media only screen and (max-width: $bp-large) {
                 margin-bottom: 0;
                 margin-right: 2.5rem;
+            }
+
+            @media only screen and (max-width: $bp-medium){
+                margin-right: 2rem;
             }
         }
 
@@ -116,6 +139,12 @@ app-space-capsule {
 
         .paragraph {
             width: 52rem;
+
+            @media only screen and (max-width: $bp-medium){
+                width: 85%;
+                margin-right: auto;
+                margin-left: auto;
+            }
         }
     }
 
@@ -133,6 +162,10 @@ app-space-capsule {
             height: 45vh;
             grid-column-start: 1;
             animation: moveInLeft 0.7s ease-out;
+        }
+
+        @media only screen and (max-width: $bp-medium){
+            height: 25vh;
         }
     }
 }

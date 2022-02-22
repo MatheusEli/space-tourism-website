@@ -13,6 +13,10 @@ app-crew {
         grid-template-columns: minmax(1rem, 1fr) [main-start] min-content [main-end] minmax(1rem, 1fr);
         text-align: center;
     }
+
+    @media only screen and (max-width: $bp-medium) {
+        align-self: auto;
+    }
 }
 
 app-douglas,
@@ -34,6 +38,10 @@ app-victor {
         grid-template-rows: min-content;
         grid-template-columns: 1fr [main-start] minmax(min-content, 80%) [main-end] 1fr;
     }
+
+    @media only screen and (max-width: $bp-medium) {
+        align-self: center;
+    }
 }
 
 .app-crew {
@@ -46,11 +54,19 @@ app-victor {
         margin: 6rem 0 10rem 0;
     }
 
+    @media only screen and (max-width: $bp-medium) {
+        grid-row-start: 2;
+        margin-bottom: 0;
+    }
     .paragraph {
         width: 70%;
 
         @media only screen and(max-width: $bp-large) {
             width: 100%;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            margin-top: 1.8rem;
         }
     }
 }
@@ -66,10 +82,20 @@ app-victor {
             text-align: left;
             margin-left: 8%;
         }
+
+        @media only screen and (max-width: $bp-medium) {
+            margin: 0;
+            grid-column: 1 / -1;
+            text-align: center;
+        }
     }
 
     &__commander-text {
         opacity: 0.5;
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 1.6rem;
+            margin-top: 2rem;
+        }
     }
 
     &__buttons-list {
@@ -87,10 +113,26 @@ app-victor {
             top: 40%;
             left: 50%;
         }
+
+        @media only screen and (max-width: $bp-medium) {
+            top: auto;
+            bottom: 44%;
+        }
+    }
+
+    &__button{
+
+        &:focus-visible{
+            outline: none;
+        }
     }
 
     &__button:not(:last-child) {
         margin-right: 3rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            margin-right: 1.8rem;
+        }
     }
 
     &__button::after {
@@ -102,6 +144,12 @@ app-victor {
         border-radius: 100%;
         opacity: 0.17;
         cursor: pointer;
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+
     }
 
     &__button:hover::after {
@@ -117,6 +165,9 @@ app-victor {
         animation: moveInLeft 1s ease-out;
         align-self: flex-end;
         width: 50rem;
+        height: 70rem;
+        object-fit: contain;
+        object-position: bottom;
 
         @media only screen and (max-width: $bp-large) {
             grid-column-start: 2;
@@ -124,6 +175,14 @@ app-victor {
             object-fit: contain;
             object-position: bottom;
             height: 60rem;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            width: 32.7rem;
+            height: 22.3rem;
+            grid-row-start: 1;
+
+            border-bottom: 1px solid #383b4b;
         }
     }
 }
