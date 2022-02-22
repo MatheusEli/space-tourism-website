@@ -152,6 +152,7 @@ app-space-capsule {
         grid-column-start: 3;
         grid-row-start: 1;
         align-self: center;
+        transition: .2s all;
 
         @media only screen and (max-width: $bp-extra-large) {
             width: 35rem;
