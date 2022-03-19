@@ -58,7 +58,7 @@ export class DestinationComponent implements OnInit{
     public verifyMediaDesktop(x){
         if (x.matches) {
             document.getElementById('header').
-            style.backgroundImage = "linear-gradient(to right bottom, rgba(0,0,0,.1), rgba(0,0,0,.7)),url('https://wallpaperaccess.com/full/823503.jpg')";
+            style.backgroundImage = "url('../../assets/destination/background-destination-desktop.jpg')";
         }
     }
     changeImage(): void{

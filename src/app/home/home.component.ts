@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
     public verifyMediaDesktop(x){
         if (x.matches) {
             document.getElementById('header').
-            style.backgroundImage = "linear-gradient(to right bottom, rgba(0,0,0,.1), rgba(0,0,0,.7)),url(https://www.unicesumar.edu.br/wp-content/uploads/2020/09/NASA-SPACE-APPS-e1601391131131.jpg)";
+            style.backgroundImage = "url('../../assets/home/background-home-desktop.jpg')";
             document.getElementById('header')
             .style.backgroundPosition = 'center';
         }
